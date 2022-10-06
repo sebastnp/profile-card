@@ -1,0 +1,115 @@
+/* sass --watch sass:css */
+
+ html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+ }
+
+*, *:before, *:after{
+    box-sizing: inherit;
+} 
+
+body{
+    // margin: 10px;
+    // padding: 10px;
+    font-family: 'Kumbh Sans', sans-serif;
+    background-color: hsl(185, 75%, 39%);
+    background-image: url(/images/bg-pattern-top.svg), url(/images/bg-pattern-bottom.svg); //colocamos las imagenes de fondo
+    background-repeat: no-repeat, no-repeat; //par que las imagens no se repitan
+    background-position: right 50vw bottom 50vh, left 50vw top 50vh; //voy empujando DESDE esa posicion esa cantidad 
+}
+
+
+main{
+    height: 100vh; /*se usa para darle todo el tamano de la pantalla*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    background-color:#7895B2;
+    // height: 280px; es mejor trabajar sin height establecido al inicio y solo width
+    width: 320px;
+    border-radius:12px;
+    display: flex;
+    flex-flow: column nowrap;
+    overflow: hidden;
+    box-shadow: 0 5px 5px rgba(0,0,0, 0.7);
+
+        &__header-patt{
+            width: 100%;
+            display: block; //para eliminar un espacio fantasma, porque la imagen es un elemnto de linea
+            }
+
+        &__data{
+            background-color: white;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center; //al ser columna ahora se invirtio 
+            // justify-content: center;
+            border-bottom: 1px solid rgba(153, 153, 153, 0.293);
+
+            &-img{
+                border: 5px solid white;
+                border-radius: 50%;
+                // width: 6.4rem;
+                margin-top: calc(-48px - 5px); //calculo tambien los bordes
+                background-color: white;
+            }
+
+            &-name{
+                font-weight: 700;
+                font-size: 1.8rem
+            }
+
+            &-age{
+                font-weight: 400;
+                color: hsl(0, 0%, 59%);
+            }
+
+            &-country{
+                color: hsl(0, 0%, 59%);
+                font-size: 1.4rem;
+                margin-top: -0.5rem;
+            }
+        }
+
+
+        &__social{
+            background-color: white;
+            display: flex;
+            padding-bottom: 10px; //para hacerlo crecer un poco abajo
+
+            &-fw{
+                flex-grow: 1;
+                text-align: center;
+
+                &-p{
+                    font-weight: 700;
+                    font-size: 2rem;
+                }
+
+                &-s{
+                    font-size: 1.1rem;
+                    font-weight: 400;
+                    color: hsl(0, 0%, 59%);
+                    letter-spacing: 1px;
+                    margin-top: -15px;
+                }
+            }
+
+            &-lk{
+                flex-grow: 1;
+                text-align: center;
+            }
+
+            &-ph{
+                flex-grow: 1;
+                text-align: center;        
+            }
+
+        }
+}
+
+//Cuando se trajaca con cards, anadir el contenido y no establecer un alto, para ir trabajando segun el contenido 
